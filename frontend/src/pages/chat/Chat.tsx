@@ -15,8 +15,7 @@ import {
     conversationApi,
     Citation,
     ToolMessageContent,
-    ChatResponse,
-    getUserInfo
+    ChatResponse
 } from "../../api";
 import { Answer } from "../../components/Answer";
 import { QuestionInput } from "../../components/QuestionInput";
@@ -33,15 +32,16 @@ const Chat = () => {
     const [showAuthMessage, setShowAuthMessage] = useState<boolean>(true);
     
     const getUserInfoList = async () => {
-        const userInfoList = await getUserInfo();
-        if (userInfoList.length === 0 && window.location.hostname !== "127.0.0.1") {
-            //setShowAuthMessage(true);
-            
-            setShowAuthMessage(false);
-        }
-        else {
-            setShowAuthMessage(false);
-        }
+       // const userInfoList = await getUserInfo();
+        // if (userInfoList.length === 0 && window.location.hostname !== "127.0.0.1") {
+        //     //setShowAuthMessage(true);
+        //     // disabling auth for temporary
+        //     setShowAuthMessage(false);
+        // }
+        // else {
+        //     setShowAuthMessage(false);
+        // }
+        setShowAuthMessage(false);
     }
 
     const makeApiRequest = async (question: string) => {
